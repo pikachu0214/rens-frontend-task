@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+
+    <title>Coding Challenge</title>
+  </head>
+  <body>
+    <div class="container" id="root">
+      <header>
+        <ul class="nav">
+          <li v-for="nav in navs" class="nav">
+            <a href="#">{{ nav }}</a>
+          </li>
+        </ul>
+      </header>
+        <div class="mytheme">{{theme}}</div>
+      <section>
+          <ul>
+            <li v-for="image in imageList" v-on:click="toggleImage(image)">
+              <img
+                v-show="!image.flipped"
+                v-bind:src="image.src"
+                alt="image.alt"
+                class="images"
+              />
+            </li>
+          </ul>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
